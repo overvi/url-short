@@ -1,0 +1,130 @@
+@use "utilities";
+@use "configes";
+
+@mixin large-screen {
+  .open-list {
+    display: none;
+  }
+  .nav {
+    padding-block: 2rem;
+
+    .open {
+      display: none;
+    }
+
+    div {
+      @include flex(2rem, $align-items: center);
+    }
+  }
+  .nav__items {
+    @include flex(1.5rem, $align-items: center);
+  }
+
+  .nav__item {
+    @include nav-item;
+  }
+  .container {
+    padding-inline: 9rem;
+  }
+
+  .hero {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      padding-right: 0;
+      img {
+        order: 1;
+      }
+    }
+
+    &__text {
+      text-align: left;
+
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .shortly {
+    background: linear-gradient(0deg, $-showcase 88%, transparent 0);
+    padding-block: 4rem;
+
+    @for $i from 1 through 4 {
+      .showcase__card:nth-child(#{$i}) {
+        margin-top: 4rem * $i;
+      }
+    }
+    .link__box {
+      @include flex($align-items: start);
+      padding: 2rem 4rem;
+
+      button {
+        width: 20%;
+        margin-top: 0;
+      }
+    }
+
+    .showcase {
+      padding: 0;
+
+      &__cards {
+        flex-direction: row;
+        .line {
+          height: 15px;
+          width: 100%;
+          top: 5rem;
+        }
+      }
+    }
+  }
+
+  .showcase__card {
+    text-align: left;
+    .showcase__icon {
+      right: 12.5rem;
+    }
+  }
+
+  .showcase__texts {
+    h1 {
+      font-size: 2rem;
+      color: $-brown;
+    }
+  }
+  footer {
+    flex-direction: row;
+    align-items: start;
+    gap: 5rem;
+    padding-block: 5rem;
+
+    .keyvalues {
+      flex-direction: row;
+      text-align: left;
+      gap: 5rem;
+      flex-basis: 69%;
+    }
+  }
+
+  .convertlink {
+    @include flex($justify-content: space-between, $align-items: center);
+    .flex-container {
+      @include reset-top-margin;
+      @include flex(1rem, $align-items: center);
+      overflow: hidden;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    &__short {
+      flex-basis: 250%;
+      white-space: nowrap;
+    }
+
+    &__previous {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}

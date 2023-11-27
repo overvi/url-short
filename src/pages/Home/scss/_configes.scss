@@ -1,0 +1,47 @@
+@import "utilities";
+
+$-robin-egg-blue: hsla(180, 66%, 49%, 1);
+$-dark-blue: hsl(255, 11%, 22%);
+$-gray: hsl(0, 0%, 75%);
+$-gray-violet: hsl(257, 7%, 63%);
+$-brown: rgba(52, 49, 60, 255);
+$-border-r: 10px;
+$-showcase: rgba(240, 241, 246, 255);
+$-footer: rgba(35, 32, 39, 255);
+
+@mixin configuration($-robin-egg-blue: null) {
+  $-robin-egg-blue: $-robin-egg-blue;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+ul[class] {
+  list-style-type: none;
+}
+
+button {
+  @include button;
+}
+
+a[class] {
+  text-decoration: none;
+}

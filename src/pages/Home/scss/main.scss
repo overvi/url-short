@@ -1,0 +1,233 @@
+@import "configes", "utilities", "responsive";
+
+.main {
+  @include flow-content(5rem);
+}
+
+.container {
+  padding-inline: 0.8rem;
+}
+
+.nav {
+  @include flex($align-items: center, $gap: 3rem);
+  padding: 1rem;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__items {
+    display: none;
+  }
+
+  &__items--mobile {
+    background-color: $-dark-blue;
+    padding: 2rem;
+    border-radius: $-border-r;
+    @include flow-content(2rem);
+    text-align: center;
+    right: 2rem;
+    left: 2rem;
+    position: absolute;
+    display: none;
+
+    .nav__item {
+      color: white;
+      text-decoration: none;
+    }
+
+    li:nth-child(4) {
+      border-top: 1px solid $-gray-violet;
+      padding-top: 2rem;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+.hero {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  &__text {
+    @include flow-content;
+    @include text-center;
+
+    h1 {
+      font-size: 2.3rem;
+      color: $-brown;
+      line-height: 1.2;
+    }
+
+    p {
+      color: $-gray-violet;
+    }
+  }
+}
+
+.shortly {
+  background: linear-gradient(0deg, $-showcase 95%, transparent 0);
+
+  .container {
+    @include flow-content(4rem);
+    padding-bottom: 2.5rem;
+  }
+
+  .link__box {
+    @include bg-pattern;
+    padding: 1rem 1.2rem;
+    border-radius: $-border-r;
+    @include flow-content;
+
+    div {
+      width: 100%;
+
+      .error-text {
+        color: red;
+      }
+    }
+
+    button {
+      @include button($-border-r - 5px);
+      width: 100%;
+    }
+
+    input {
+      @include input;
+    }
+  }
+
+  .showcase {
+    @include text-center;
+    @include flow-content;
+
+    &__texts {
+      max-width: 27rem;
+      margin: auto;
+      @include flow-content;
+    }
+
+    p {
+      color: $-gray-violet;
+    }
+
+    &__cards {
+      @include flow-content-fully(6rem);
+      @include flex(3rem);
+      position: relative;
+      align-items: start;
+      flex-direction: column;
+
+      .line {
+        position: absolute;
+        background-color: $-robin-egg-blue;
+        height: 85%;
+        width: 15px;
+        inset: 0;
+        margin: auto;
+      }
+
+      div:not(.line) {
+        @include show-case-card;
+        @include flow-content;
+        padding-top: 4rem;
+        position: relative;
+      }
+    }
+
+    &__icon {
+      @include show-case-icon;
+    }
+  }
+}
+
+.before-footer {
+  margin-top: 0;
+  padding: 6rem 1.5rem;
+  background-color: red;
+  color: #fff;
+  @include text-center;
+  @include flow-content(1rem);
+  @include another-pattern;
+}
+
+footer {
+  color: #fff;
+  @include text-center;
+  @include reset-top-margin;
+  background-color: $-footer;
+  @include flex;
+  flex-direction: column;
+
+  .footer__icons {
+    @include flex(2rem);
+  }
+
+  .container {
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 3rem;
+  }
+  .keyvalues {
+    @include flow-content-fully(2rem);
+    @include flex;
+    flex-direction: column;
+
+    dt {
+      @include key;
+    }
+
+    dd {
+      @include value;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.convertlink {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: $-border-r;
+  @include flow-content;
+
+  .divider {
+    width: 100%;
+    background-color: $-gray;
+    height: 1px;
+  }
+
+  &__previous {
+    color: #000;
+  }
+
+  &__short {
+    color: $-robin-egg-blue;
+  }
+
+  button {
+    border-radius: $-border-r;
+    width: 100%;
+  }
+
+  .flex-container {
+    @include flow-content(0.5rem);
+  }
+}
+
+.copy-button {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+@media (width > 1024px) {
+  @include large-screen;
+}
