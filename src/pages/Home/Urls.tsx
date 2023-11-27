@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useList } from "./zustand/list";
 
 interface Props {
