@@ -5,11 +5,6 @@ import { z } from "zod";
 import Urls from "./Urls";
 import { useList } from "./zustand/list";
 
-interface Data {
-  originalUrl: string;
-  shortUrl: string;
-}
-
 const InputField = () => {
   const schema = z.object({
     url: z
