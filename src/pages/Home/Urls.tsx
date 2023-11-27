@@ -13,10 +13,7 @@ const Urls = ({ originalUrl, newUrl }: Props) => {
   const { copy, setCopy } = useList();
 
   return (
-    <div
-      style={{ display: originalUrl ? "flex" : "none" }}
-      className="convertlink"
-    >
+    <div style={{ display: originalUrl ? "" : "none" }} className="convertlink">
       <a href={originalUrl} target="_blank" className="convertlink__previous">
         {originalUrl}
       </a>
